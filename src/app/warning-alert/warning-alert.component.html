@@ -1,2 +1,14 @@
 <button type="button" class="btn btn-danger">Do not press this button</button>
 <h3>some test text</h3>
+<hr>
+
+<input type="text"
+class="form-control"
+[(ngModel)]="userName">
+
+<p>{{ userName }}</p>
+<hr>
+
+<button type="button" class="btn btn-warning" [disabled]="!userName" 
+(click)="userName = ''">Init</button>
+<hr>
