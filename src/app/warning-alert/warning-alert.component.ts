@@ -7,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarningAlertComponent implements OnInit {
   userName = 'ilie';
+  displayText = false;
+  log = [];
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onToggle() {
+    this.displayText = !this.displayText;
+    this.log.push(this.log.length + 1);
   }
 
 }

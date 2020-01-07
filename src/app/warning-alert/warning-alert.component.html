@@ -12,3 +12,14 @@ class="form-control"
 <button type="button" class="btn btn-warning" [disabled]="!userName" 
 (click)="userName = ''">Init</button>
 <hr>
+
+<button type="button" class="btn btn-secondary" (click)="onToggle()">Display Details</button>
+<p *ngIf = "displayText">Merry Christmas people!</p>
+<div
+ *ngFor="let logItem of log"
+ [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue' : 'transparent'}"
+ [ngClass]="{'white-color': logItem >= 5 ? true : false}"
+
+ >{{ logItem }}</div>
+
+<hr>
