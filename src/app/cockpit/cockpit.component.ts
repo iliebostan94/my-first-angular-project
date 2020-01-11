@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+// import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-cockpit',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent implements OnInit {
+  // tslint:disable-next-line:max-line-length
+  @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string,
+     serverRegistration: string, serverModel: string}>();
+  @Output() blueprintCreated = new EventEmitter<{serverName: string, serverContent: string,
+     serverRegistration: string, serverModel: string}>();
   newServerName = '';
   newServerContent = '';
+  newServerRegistration = '';
+  newServerModel = '';
 
   constructor() { }
 
@@ -15,19 +23,13 @@ export class CockpitComponent implements OnInit {
   }
 
   onAddServer() {
-    // this.serverElements.push({
-    //   type: 'server',
-    //   name: this.newServerName,
-    //   content: this.newServerContent
-    // });
+   this.serverCreated.emit({serverName: this.newServerName, serverContent: this.newServerContent,
+     serverRegistration: this.newServerRegistration, serverModel: this.newServerModel});
   }
 
   onAddBlueprint() {
-    // this.serverElements.push({
-    //   type: 'blueprint',
-    //   name: this.newServerName,
-    //   content: this.newServerContent
-    // });
+  this.blueprintCreated.emit({ serverName: this.newServerName, serverContent: this.newServerContent,
+    serverRegistration: this.newServerRegistration, serverModel: this.newServerModel});
   }
 
 }

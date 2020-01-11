@@ -4,6 +4,12 @@
         <p>
             <strong *ngIf="element.type === 'server'" style="color: red;">{{ element.content }}</strong>
             <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+            <br>
+            <strong>Next registration for {{element.model}} with number licence number {{element.registration}}</strong>
+
         </p>
+        <hr>
     </div>
 </div>
+
+<!-- <h3>Next is registration for {{anotherElement.model}} with number licence {{anotherElement.registration}}</h3> -->
