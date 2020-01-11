@@ -8,6 +8,8 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { SubFileToSuccessComponent } from './sub-file-to-success/sub-file-to-success.component';
 import { FormsModule } from '@angular/forms';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
-    SubFileToSuccessComponent
+    SubFileToSuccessComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,

@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   // styleUrls: ['./app.component.css']
   styles: [ ' h1{ color: red;}  ' ]
 })
-export class AppComponent {}
+export class AppComponent {
+  serverElements = [{type: 'server', name: 'Testserver', content: 'Just a test!'}];
+
+}
 
