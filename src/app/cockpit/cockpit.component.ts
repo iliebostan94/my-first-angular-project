@@ -9,13 +9,14 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class CockpitComponent implements OnInit {
   // tslint:disable-next-line:max-line-length
   @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string,
-     serverRegistration: string, serverModel: string}>();
+    serverModel: string, serverRegistration: string, serverRegion: string}>();
   @Output() blueprintCreated = new EventEmitter<{serverName: string, serverContent: string,
-     serverRegistration: string, serverModel: string}>();
+    serverModel: string, serverRegistration: string, serverRegion: string}>();
   newServerName = '';
   newServerContent = '';
   newServerRegistration = '';
   newServerModel = '';
+  newServerRegion = '';
 
   constructor() { }
 
@@ -24,12 +25,12 @@ export class CockpitComponent implements OnInit {
 
   onAddServer() {
    this.serverCreated.emit({serverName: this.newServerName, serverContent: this.newServerContent,
-     serverRegistration: this.newServerRegistration, serverModel: this.newServerModel});
+    serverModel: this.newServerModel, serverRegistration: this.newServerRegistration, serverRegion: this.newServerRegion});
   }
 
   onAddBlueprint() {
   this.blueprintCreated.emit({ serverName: this.newServerName, serverContent: this.newServerContent,
-    serverRegistration: this.newServerRegistration, serverModel: this.newServerModel});
+    serverModel: this.newServerModel, serverRegistration: this.newServerRegistration, serverRegion: this.newServerRegion});
   }
 
 }

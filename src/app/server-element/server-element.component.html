@@ -5,7 +5,8 @@
             <strong *ngIf="element.type === 'server'" style="color: red;">{{ element.content }}</strong>
             <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
             <br>
-            <strong>Next registration for {{element.model}} with number licence number {{element.registration}}</strong>
+            <strong>Next registration for {{element.model}} with licence number {{element.registration}}, 
+                from the region: {{element.region}}</strong>
 
         </p>
         <hr>
