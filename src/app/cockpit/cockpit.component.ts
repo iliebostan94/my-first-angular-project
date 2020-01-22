@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, ViewChild, ElementRef } from '@angular/core';
 // import { EventEmitter } from 'protractor';
 
 @Component({
@@ -12,8 +12,9 @@ export class CockpitComponent implements OnInit {
     serverModel: string, serverRegistration: string, serverRegion: string}>();
   @Output() blueprintCreated = new EventEmitter<{serverName: string, serverContent: string,
     serverModel: string, serverRegistration: string, serverRegion: string}>();
-  newServerName = '';
-  newServerContent = '';
+  // newServerName = '';
+  // newServerContent = '';
+  @ViewChild('serverContentInput', {static: true}) serverContentInput: ElementRef;
   newServerRegistration = '';
   newServerModel = '';
   newServerRegion = '';
@@ -23,13 +24,15 @@ export class CockpitComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddServer() {
-   this.serverCreated.emit({serverName: this.newServerName, serverContent: this.newServerContent,
-    serverModel: this.newServerModel, serverRegistration: this.newServerRegistration, serverRegion: this.newServerRegion});
+  onAddServer(nameInput: HTMLInputElement) {
+    console.log(nameInput.value),
+    console.log(this.serverContentInput);
+    this.serverCreated.emit({serverName: nameInput.value, serverContent: this.serverContentInput.nativeElement.value,
+     serverModel: this.newServerModel, serverRegistration: this.newServerRegistration, serverRegion: this.newServerRegion});
   }
 
-  onAddBlueprint() {
-  this.blueprintCreated.emit({ serverName: this.newServerName, serverContent: this.newServerContent,
+  onAddBlueprint(nameInput: HTMLInputElement) {
+  this.blueprintCreated.emit({ serverName: nameInput.value, serverContent: this.serverContentInput.nativeElement.value,
     serverModel: this.newServerModel, serverRegistration: this.newServerRegistration, serverRegion: this.newServerRegion});
   }
 

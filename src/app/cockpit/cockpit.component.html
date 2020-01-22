@@ -2,9 +2,19 @@
     <div class="col-md-12">
         <p>Add new Servers or Blueprints</p>
         <label> Server Name</label>
-        <input type="text" class="form-control" [(ngModel)]="newServerName">
+        <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
+        <input 
+        type="text"
+        class="form-control"
+        #serverNameInput>
+
         <label>Server Content</label>
-        <input type="text" class="form-control" [(ngModel)]="newServerContent">
+        <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+        <input 
+        type="text"
+        class="form-control"
+        #serverContentInput>
+
         <label>Registration number</label>
         <input type="text" class="form-control" [(ngModel)]="newServerRegistration">
         <label>Car Model</label>
@@ -13,9 +23,9 @@
         <input type="text" class="form-control" [(ngModel)]="newServerRegion">
 
         <br>
-        <button type="button" class="btn btn-primary" style="margin: 20px;" (click)="onAddServer()">Add Server</button>
+        <button type="button" class="btn btn-primary" style="margin: 20px;" (click)="onAddServer(serverNameInput)">Add Server</button>
 
-        <button type="button" class="btn btn-primary" style="margin: 20px;" (click)="onAddBlueprint()">Add Server Blueprint</button>
+        <button type="button" class="btn btn-primary" style="margin: 20px;" (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button>
 
     </div>
 </div>

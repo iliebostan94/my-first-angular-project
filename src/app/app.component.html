@@ -22,6 +22,7 @@
   <div class="row">
     <div class="col-md-12">
       <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First Component</button>
 
       <!-- <app-server-element *ngFor="let regDetail of regDetails" [anotherElement]="regDetail"></app-server-element> -->
     </div>

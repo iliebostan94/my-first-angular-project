@@ -33,6 +33,9 @@ export class AppComponent {
       region: blueprintData.serverRegion
     });
   }
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
+  }
 
 
 }
