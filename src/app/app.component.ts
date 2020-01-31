@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   serverElements = [{type: 'server', name: 'Testserver', content: 'Just a test!', registration: '573', model: 'BMW', region: 'Moldova'}];
    // regDetails = [{type: 'server', registration: 'GWF573', model: 'BMW'}];
+   oddNumbers: number[] = [];
+   evenNumbers: number[] = [];
+
 
    onServerAdded(serverData: {serverName: string, serverContent: string, serverRegistration: string,
      serverModel: string, serverRegion: string}) {
@@ -35,6 +38,15 @@ export class AppComponent {
   }
   onDestroyFirst() {
     this.serverElements.splice(0, 1);
+  }
+
+  onIntervalFired(firedNumber: number) {
+    // console.log(firedNumber);
+    if (firedNumber % 2 === 0) {
+      this.evenNumbers.push(firedNumber);
+    } else {
+      this.oddNumbers.push(firedNumber);
+    }
   }
 
 
